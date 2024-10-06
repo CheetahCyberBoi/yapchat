@@ -2,6 +2,8 @@ use std::{env, path::PathBuf};
 
 use lazy_static::lazy_static;
 
+// Globals used by the project
+// TODO: Migrate this to be a proper Ratatui-style configuration system somehow.
 lazy_static! {
     pub static ref PROJECT_NAME: String = env!("CARGO_CRATE_NAME").to_uppercase().to_string();
     pub static ref DATA_FOLDER: Option<PathBuf> = 

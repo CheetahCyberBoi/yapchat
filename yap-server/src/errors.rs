@@ -1,8 +1,9 @@
 use color_eyre::Result;
 use tracing::error;
 
-
+/// Initializes the panic hooks and eyre hooks used by this application for fancy error handling.
 pub fn init() -> Result<()> {
+    // Get the hooks from color_eyre.
     let (panic_hook, eyre_hook) = color_eyre::config::HookBuilder::default()
         .panic_section(format!(
             "This is a bug. Consider reporting it to Imulat Devs ifwi4@email.com Thank you."
@@ -11,14 +12,16 @@ pub fn init() -> Result<()> {
         .display_location_section(false)
         .display_env_section(false)
         .into_hooks();
-
+    // Install the eyre hook so we have fancy looking errors. Mainly for the traces if anything.
     eyre_hook.install()?;
+    // Set up the regular panic hooks.
     std::panic::set_hook(Box::new(move |panic_info| {
         
-
+        // If we're compiling for release the end-user should be pretty informed about what to do if the app crashes.
         #[cfg(not(debug_assertions))]
         {
             use human_panic::{handle_dump, metadata, print_msg};
+            // Change this as needed.
             let metadata = metadata!()
                 .authors("Imulat Devs Inc. <ifwi4@email.com>")
                 .homepage("imulat.free.nf")
@@ -31,7 +34,7 @@ pub fn init() -> Result<()> {
         }
         let msg = format!("{}", panic_hook.panic_report(panic_info));
         error!("Error: {}", strip_ansi_escapes::strip_str(msg));
-
+        // When we're compiling for debug reasons we really just need a lot of information fast.
         #[cfg(debug_assertions)]
         {
             //Better panic stacktrace that is only enabled when debugging.
@@ -41,12 +44,13 @@ pub fn init() -> Result<()> {
                 .verbosity(better_panic::Verbosity::Full)
                 .create_panic_handler()(panic_info);
         }
-
+        // Exit the process at the end of the hooks.
         std::process::exit(libc::EXIT_FAILURE);
     }));
     Ok(())
 }
 
+/// Stole this from Ratatui's component template.
 /// Similar to the `std::dbg!` macro, but generates `tracing` events rather
 /// than printing to stdout.
 ///

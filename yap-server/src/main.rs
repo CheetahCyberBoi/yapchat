@@ -11,6 +11,7 @@ use warp::ws::{WebSocket};
 
 #[tokio::main]
 async fn main() -> color_eyre::Result<()> {
+    // Initialize the logging and errors
     errors::init()?;
     logging::init()?;
     tracing::info!("All set up!");
@@ -23,7 +24,7 @@ async fn main() -> color_eyre::Result<()> {
         let app_state = app_state.clone();
         move || app_state.clone()  // Clone the Arc on each request
     });
-
+    // Start Warp.
     let route = warp::path::end()
         .and(warp::ws())
         .and(clients)
