@@ -11,7 +11,7 @@ use tokio_tungstenite::MaybeTlsStream;
 
 #[tokio::main]
 async fn main() {
-    console_subscriber::init();
+    //console_subscriber::init(); makes builds annoying so commented out
     let mut buffer = String::new();
     let stdin = io::stdin();
 
@@ -35,7 +35,7 @@ async fn main() {
     let ws_uri = if raw_ip.starts_with("ws://") || raw_ip.starts_with("wss://") {
         raw_ip.to_string()
     } else {
-        format!("wss://{}", raw_ip)
+        format!("ws://{}", raw_ip)
     };
 
     // Parse the URI and initiate the WebSocket connection.
@@ -44,6 +44,14 @@ async fn main() {
     println!("Connected!");
     // Split the WebSocket to handle concurrent use.
     let (mut write_stream, mut read_stream) = ws_stream.split();
+    // Send a dummy message to the server to get it to display the "connected" thingy
+    let json = json!({
+        "usr": username,
+        "msg": "DUMMY",
+    });
+    write_stream.send(tungstenite::Message::text(serde_json::to_string(&json).unwrap()))
+        .await
+        .expect("Failed to send connection message to server");
 
     //Spawn a task to handle reading from the WebSocket
 
@@ -66,10 +74,14 @@ async fn main() {
                         // Convert to H:M format
                         let formatted_time = local_date_time.format("%H:%M").to_string();
 
+                        // Parse the message contents as proper strings.
+                        let user = message_from_server["usr"].as_str().unwrap_or("[Unknown User]");
+                        let message = message_from_server["msg"].as_str().unwrap_or("");
+
                         println!("[{:#}] {}: {}", 
                                 formatted_time,
-                                message_from_server["usr"], 
-                                message_from_server["msg"]);
+                                user, 
+                                message);
                     }
                 }
 
@@ -88,6 +100,9 @@ async fn main() {
         //println!("Enter your message: "); // don't need, easy solution to the mismatch problem.
         //buffer.clear();
         stdin.read_line(&mut buffer).unwrap();
+        io::stdout().flush().unwrap();
+
+        print!("\x1B[1A\x1B[2K"); // Move cursor up one line and clear it
         io::stdout().flush().unwrap();
 
         message["msg"] = json!(buffer.trim());

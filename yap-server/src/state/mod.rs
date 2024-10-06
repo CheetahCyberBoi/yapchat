@@ -1,6 +1,7 @@
 pub mod globals;
 
 use futures::StreamExt;
+use serde_json::json;
 use std::sync::Arc;
 use std::sync::atomic::{AtomicUsize, Ordering};
 use std::collections::HashMap;
@@ -43,6 +44,26 @@ impl AppState {
             rxs.forward(ws_tx).await;
         });
         let new_client_id = NEXT_CLIENT_ID.fetch_add(1, Ordering::Relaxed);
+        // Wait for the first message from client to get their username.
+        let username = if let Some(result) = ws_rx.next().await {
+            match result {
+                Ok(msg) => {
+                    let json: serde_json::Value = serde_json::from_str(msg.to_str().unwrap_or("{\"usr\": \"Unknown\"}")).unwrap();
+                    json["usr"].to_string()
+                },
+                Err(_) => "Unknown".to_string(),
+            }
+        } else {
+            "Unknown".to_string()
+        };
+
+        // Broadcast that a new user has joined
+        let join_message = json!({
+            "usr": "Server",
+            "msg": format!("{} has joined the chat", username),
+            "timestamp": chrono::Utc::now()
+        });
+        self.broadcast_to_clients(Message::text(join_message.to_string())).await;
         // Add the new client
         self.clients.write().await.insert(new_client_id, Client::new(tx));
         // Sit and wait for the client to send messages.
@@ -57,7 +78,14 @@ impl AppState {
             self.broadcast_to_clients(msg).await;
         }
         // Client no longer sending messages, we can disconnect them.
+        //Broadcast that the client has left
         self.close_client(new_client_id).await;
+        let leave_message = json!({
+            "usr": "Server",
+            "msg": format!("{} has left the chat", username),
+            "timestamp": chrono::Utc::now()
+        });
+        self.broadcast_to_clients(Message::text(leave_message.to_string())).await;
         info!("client {} disconnected", new_client_id);
     }
     /// Broadcasts a message to all connected clients.

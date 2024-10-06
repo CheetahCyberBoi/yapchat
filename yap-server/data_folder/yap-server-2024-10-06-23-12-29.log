@@ -1,0 +1,105 @@
+2024-10-06T23:12:29.594286Z  INFO src/main.rs:17: All set up!
+2024-10-06T23:12:29.596990Z  INFO Server::run{addr=0.0.0.0:80}: C:\Users\david\.cargo\registry\src\index.crates.io-6f17d22bba15001f\warp-0.3.7\src\server.rs:138: listening on http://0.0.0.0:80
+2024-10-06T23:12:37.605278Z  INFO src/main.rs:33: Socket connected!
+2024-10-06T23:12:50.716998Z  INFO src/main.rs:33: Socket connected!
+2024-10-06T23:12:52.179280Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"\\\"Cheetah\\\" has joined the chat\",\"timestamp\":\"2024-10-06T23:12:52.179273Z\",\"usr\":\"Server\"}",
+)
+2024-10-06T23:12:52.179467Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:12:55.018883Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"asdf\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T23:12:55.018934Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:13:03.003158Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"\\\"alt\\\" has joined the chat\",\"timestamp\":\"2024-10-06T23:13:03.003152100Z\",\"usr\":\"Server\"}",
+)
+2024-10-06T23:13:03.003191Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:13:18.539037Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"hello there\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T23:13:18.539076Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:13:50.026934Z  WARN src\state\mod.rs:74: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-06T23:13:50.026986Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"\\\"alt\\\" has left the chat\",\"timestamp\":\"2024-10-06T23:13:50.026980100Z\",\"usr\":\"Server\"}",
+)
+2024-10-06T23:13:50.027002Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:13:50.027014Z  INFO src\state\mod.rs:89: client 1 disconnected
+2024-10-06T23:15:09.226595Z  WARN src\state\mod.rs:74: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-06T23:15:09.226645Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"\\\"Cheetah\\\" has left the chat\",\"timestamp\":\"2024-10-06T23:15:09.226639800Z\",\"usr\":\"Server\"}",
+)
+2024-10-06T23:15:09.226659Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:15:09.226665Z  INFO src\state\mod.rs:89: client 2 disconnected
+2024-10-06T23:15:22.088908Z  INFO src/main.rs:33: Socket connected!
+2024-10-06T23:15:22.089160Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"\\\"alt\\\" has joined the chat\",\"timestamp\":\"2024-10-06T23:15:22.089156100Z\",\"usr\":\"Server\"}",
+)
+2024-10-06T23:15:22.089176Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:15:23.454629Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"hello\",\"usr\":\"alt\"}",
+)
+2024-10-06T23:15:23.454661Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:15:30.852613Z  INFO src/main.rs:33: Socket connected!
+2024-10-06T23:15:30.852817Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"\\\"Cheetah\\\" has joined the chat\",\"timestamp\":\"2024-10-06T23:15:30.852813100Z\",\"usr\":\"Server\"}",
+)
+2024-10-06T23:15:30.852834Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:15:32.602927Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"ehllo\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T23:15:32.602968Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:16:13.632410Z  INFO src/main.rs:33: Socket connected!
+2024-10-06T23:16:13.632606Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"\\\"alt2\\\" has joined the chat\",\"timestamp\":\"2024-10-06T23:16:13.632602Z\",\"usr\":\"Server\"}",
+)
+2024-10-06T23:16:13.632622Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:16:16.958395Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"hi alt2\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T23:16:16.958434Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:16:20.602351Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"wowie a friend\",\"usr\":\"alt\"}",
+)
+2024-10-06T23:16:20.602391Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:16:23.357814Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"ok that's cool\",\"usr\":\"alt2\"}",
+)
+2024-10-06T23:16:23.357852Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:16:30.342233Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"it can handle up to 3 clients!!!!\",\"usr\":\"alt2\"}",
+)
+2024-10-06T23:16:30.342273Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:16:39.718398Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"alr i gtg\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T23:16:39.718435Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:16:40.674269Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"seeya\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T23:16:40.674309Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:16:41.834297Z  WARN src\state\mod.rs:74: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-06T23:16:41.834339Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"\\\"Cheetah\\\" has left the chat\",\"timestamp\":\"2024-10-06T23:16:41.834334Z\",\"usr\":\"Server\"}",
+)
+2024-10-06T23:16:41.834355Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:16:41.834363Z  INFO src\state\mod.rs:89: client 4 disconnected
+2024-10-06T23:16:45.338046Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"byeeee\",\"usr\":\"alt2\"}",
+)
+2024-10-06T23:16:45.338078Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:16:46.834314Z  WARN src\state\mod.rs:74: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-06T23:16:46.834355Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"\\\"alt2\\\" has left the chat\",\"timestamp\":\"2024-10-06T23:16:46.834349200Z\",\"usr\":\"Server\"}",
+)
+2024-10-06T23:16:46.834371Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:16:46.834381Z  INFO src\state\mod.rs:89: client 5 disconnected
+2024-10-06T23:16:49.050350Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"byeee\",\"usr\":\"alt\"}",
+)
+2024-10-06T23:16:49.050395Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:16:50.882782Z  WARN src\state\mod.rs:74: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-06T23:16:50.882822Z  INFO src\state\mod.rs:93: Broadcasting message: Text(
+    "{\"msg\":\"\\\"alt\\\" has left the chat\",\"timestamp\":\"2024-10-06T23:16:50.882815500Z\",\"usr\":\"Server\"}",
+)
+2024-10-06T23:16:50.882837Z  INFO src\state\mod.rs:103: Appended message with timestamp
+2024-10-06T23:16:50.882844Z  INFO src\state\mod.rs:89: client 3 disconnected

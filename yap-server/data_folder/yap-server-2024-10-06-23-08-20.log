@@ -1,0 +1,16 @@
+2024-10-06T23:08:20.468754Z  INFO src/main.rs:17: All set up!
+2024-10-06T23:08:20.470583Z  INFO Server::run{addr=0.0.0.0:80}: C:\Users\david\.cargo\registry\src\index.crates.io-6f17d22bba15001f\warp-0.3.7\src\server.rs:138: listening on http://0.0.0.0:80
+2024-10-06T23:08:28.610024Z  INFO src/main.rs:33: Socket connected!
+2024-10-06T23:08:38.981777Z  INFO src/main.rs:33: Socket connected!
+2024-10-06T23:08:42.711760Z  INFO src\state\mod.rs:90: Broadcasting message: Text(
+    "{\"msg\":\"{\\\"msg\\\":\\\"hello\\\",\\\"usr\\\":\\\"Cheetah\\\"} has joined the chat\",\"timestamp\":\"2024-10-06T23:08:42.711736900Z\",\"usr\":\"Server\"}",
+)
+2024-10-06T23:08:42.711964Z  INFO src\state\mod.rs:100: Appended message with timestamp
+2024-10-06T23:08:44.947787Z  INFO src\state\mod.rs:90: Broadcasting message: Text(
+    "{\"msg\":\"hi\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T23:08:44.947833Z  INFO src\state\mod.rs:100: Appended message with timestamp
+2024-10-06T23:08:48.871652Z  INFO src\state\mod.rs:90: Broadcasting message: Text(
+    "{\"msg\":\"{\\\"msg\\\":\\\"uh oh\\\",\\\"usr\\\":\\\"alt\\\"} has joined the chat\",\"timestamp\":\"2024-10-06T23:08:48.871645600Z\",\"usr\":\"Server\"}",
+)
+2024-10-06T23:08:48.871690Z  INFO src\state\mod.rs:100: Appended message with timestamp

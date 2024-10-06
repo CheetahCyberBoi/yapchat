@@ -1,0 +1,33 @@
+2024-10-06T22:52:13.699443Z  INFO src/main.rs:17: All set up!
+2024-10-06T22:52:13.700800Z  INFO Server::run{addr=0.0.0.0:80}: C:\Users\david\.cargo\registry\src\index.crates.io-6f17d22bba15001f\warp-0.3.7\src\server.rs:138: listening on http://0.0.0.0:80
+2024-10-06T22:56:14.667906Z  INFO src/main.rs:33: Socket connected!
+2024-10-06T22:56:33.131912Z  INFO src/main.rs:33: Socket connected!
+2024-10-06T22:56:34.954175Z  INFO src\state\mod.rs:65: Broadcasting message: Text(
+    "{\"msg\":\"hi\",\"usr\":\"alt\"}",
+)
+2024-10-06T22:56:34.954270Z  INFO src\state\mod.rs:75: Appended message with timestamp
+2024-10-06T22:56:39.629449Z  INFO src\state\mod.rs:65: Broadcasting message: Text(
+    "{\"msg\":\"hello there!\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T22:56:39.629483Z  INFO src\state\mod.rs:75: Appended message with timestamp
+2024-10-06T22:57:07.601941Z  INFO src\state\mod.rs:65: Broadcasting message: Text(
+    "{\"msg\":\"well how are u doing today\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T22:57:07.601982Z  INFO src\state\mod.rs:75: Appended message with timestamp
+2024-10-06T23:00:27.297261Z  INFO src\state\mod.rs:65: Broadcasting message: Text(
+    "{\"msg\":\"alr i gtg\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T23:00:27.297303Z  INFO src\state\mod.rs:75: Appended message with timestamp
+2024-10-06T23:00:29.990028Z  INFO src\state\mod.rs:65: Broadcasting message: Text(
+    "{\"msg\":\"see ya\",\"usr\":\"alt\"}",
+)
+2024-10-06T23:00:29.990098Z  INFO src\state\mod.rs:75: Appended message with timestamp
+2024-10-06T23:00:32.097240Z  WARN src\state\mod.rs:53: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-06T23:00:32.097305Z  INFO src\state\mod.rs:61: client 1 disconnected
+2024-10-06T23:00:34.581125Z  WARN src\state\mod.rs:53: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-06T23:00:34.581161Z  INFO src\state\mod.rs:61: client 2 disconnected
+2024-10-06T23:00:58.747795Z  INFO src/main.rs:33: Socket connected!
+2024-10-06T23:01:01.409025Z  INFO src\state\mod.rs:65: Broadcasting message: Text(
+    "{\"msg\":\"hello\",\"usr\":\"alt\"}",
+)
+2024-10-06T23:01:01.409059Z  INFO src\state\mod.rs:75: Appended message with timestamp
