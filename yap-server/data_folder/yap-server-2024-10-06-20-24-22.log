@@ -1,0 +1,118 @@
+2024-10-06T20:24:22.720340Z  INFO src/main.rs:16: All set up!
+2024-10-06T20:24:22.722372Z  INFO Server::run{addr=0.0.0.0:80}: C:\Users\david\.cargo\registry\src\index.crates.io-6f17d22bba15001f\warp-0.3.7\src\server.rs:138: listening on http://0.0.0.0:80
+2024-10-06T20:24:36.355683Z  INFO src/main.rs:32: Socket connected!
+2024-10-06T20:24:50.503177Z  INFO src/main.rs:32: Socket connected!
+2024-10-06T20:25:01.752860Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"hello\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:25:01.752956Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:25:22.297005Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"why hello there\",\"usr\":\"ifwi4\"}",
+)
+2024-10-06T20:25:22.297072Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:25:48.816782Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"ok\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:25:48.816816Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:25:51.409324Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"this is pretty cool right\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:25:51.409357Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:25:54.200724Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"yeah i agre\",\"usr\":\"ifwi4\"}",
+)
+2024-10-06T20:25:54.200768Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:25:56.688880Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"*agree\",\"usr\":\"ifwi4\"}",
+)
+2024-10-06T20:25:56.688918Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:26:04.780780Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"ok i gtg now see ya later\",\"usr\":\"ifwi4\"}",
+)
+2024-10-06T20:26:04.780824Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:26:06.068714Z  WARN src\state\mod.rs:44: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-06T20:26:06.068775Z  INFO src\state\mod.rs:51: client 1 disconnected
+2024-10-06T20:26:08.668642Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"aww no more fren\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:26:08.668680Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:26:11.940642Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"ill go too\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:26:11.940686Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:26:13.552656Z  WARN src\state\mod.rs:44: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-06T20:26:13.552704Z  INFO src\state\mod.rs:51: client 2 disconnected
+2024-10-06T20:45:44.744106Z  INFO src/main.rs:32: Socket connected!
+2024-10-06T20:45:52.111374Z  INFO src/main.rs:32: Socket connected!
+2024-10-06T20:45:53.821149Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"hello\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:45:53.821194Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:46:02.228981Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"hi fuckerino (yes you actually say this)\",\"usr\":\"fnafinatic09\"}",
+)
+2024-10-06T20:46:02.229023Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:46:09.873541Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"hey that wasn't very kind :<\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:46:09.873583Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:46:14.081057Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"well suck it\",\"usr\":\"fnafinatic09\"}",
+)
+2024-10-06T20:46:14.081099Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:46:18.525421Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"i'm very mean harharhar\",\"usr\":\"fnafinatic09\"}",
+)
+2024-10-06T20:46:18.525460Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:46:21.477540Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"but also kinda nice\",\"usr\":\"fnafinatic09\"}",
+)
+2024-10-06T20:46:21.477572Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:46:24.309104Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"capn't\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:46:24.309145Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:46:29.217310Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"ok zoomer\",\"usr\":\"fnafinatic09\"}",
+)
+2024-10-06T20:46:29.217349Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:46:34.925105Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"ok alphate\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:46:34.925145Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:46:42.233310Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"this was a mistake\",\"usr\":\"fnafinatic09\"}",
+)
+2024-10-06T20:46:42.233354Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:46:44.793274Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"yeah i agree\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:46:44.793314Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:46:48.653121Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"the codebase is really really shitty\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:46:48.653171Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:46:53.089185Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"just like you\",\"usr\":\"fnafinatic09\"}",
+)
+2024-10-06T20:46:53.089217Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:46:57.373221Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"thanks! ;>\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:46:57.373272Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:47:03.500965Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"ok fuck off\",\"usr\":\"fnafinatic09\"}",
+)
+2024-10-06T20:47:03.501006Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:47:04.908846Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"alr\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:47:04.908888Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:47:07.005055Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"he gone\",\"usr\":\"fnafinatic09\"}",
+)
+2024-10-06T20:47:07.005095Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:47:09.705241Z  WARN src\state\mod.rs:44: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-06T20:47:09.705285Z  INFO src\state\mod.rs:51: client 4 disconnected
+2024-10-06T20:47:17.672889Z  WARN src\state\mod.rs:44: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-06T20:47:17.672936Z  INFO src\state\mod.rs:51: client 3 disconnected

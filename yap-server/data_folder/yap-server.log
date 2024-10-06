@@ -1,0 +1,127 @@
+2024-10-06T19:09:23.482045Z  INFO src/main.rs:16: All set up!
+2024-10-06T19:09:23.483679Z  INFO Server::run{addr=0.0.0.0:80}: C:\Users\david\.cargo\registry\src\index.crates.io-6f17d22bba15001f\warp-0.3.7\src\server.rs:138: listening on http://0.0.0.0:80
+2024-10-06T19:09:36.468801Z  INFO src/main.rs:32: Socket connected!
+2024-10-06T19:09:38.574125Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"Hello!\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T19:09:38.574206Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T19:09:43.681968Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"This is a test!\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T19:09:43.682002Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T19:10:03.187754Z  INFO src/main.rs:32: Socket connected!
+2024-10-06T19:10:06.518139Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"Hi Cheetah!\",\"usr\":\"CheetahAlt\"}",
+)
+2024-10-06T19:10:06.518185Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T19:10:19.465664Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"Why hello there!\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T19:10:19.465716Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T19:10:27.669373Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"Man this is awesome!\",\"usr\":\"CheetahAlt\"}",
+)
+2024-10-06T19:10:27.669418Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T19:10:30.693385Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"I agree!\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T19:10:30.693419Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T19:55:25.022370Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"/exit\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T19:55:25.022480Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T19:55:25.022513Z  WARN src\state\mod.rs:44: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-06T19:55:25.022527Z  INFO src\state\mod.rs:51: client 1 disconnected
+2024-10-06T19:55:32.246555Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"I'm gone!\",\"usr\":\"CheetahAlt\"}",
+)
+2024-10-06T19:55:32.246597Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:04:01.908907Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"/exit\",\"usr\":\"CheetahAlt\"}",
+)
+2024-10-06T20:04:01.908937Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:04:01.909088Z  WARN src\state\mod.rs:44: Error receiving message from client: Io(Os { code: 10054, kind: ConnectionReset, message: "An existing connection was forcibly closed by the remote host." })
+2024-10-06T20:04:01.909433Z  INFO src\state\mod.rs:51: client 2 disconnected
+2024-10-06T20:04:17.987662Z  INFO src/main.rs:32: Socket connected!
+2024-10-06T20:04:19.957584Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"Hello!\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:04:19.957614Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:07:12.419007Z  WARN src\state\mod.rs:44: Error receiving message from client: Io(Os { code: 10054, kind: ConnectionReset, message: "An existing connection was forcibly closed by the remote host." })
+2024-10-06T20:07:12.419144Z  INFO src\state\mod.rs:51: client 3 disconnected
+2024-10-06T20:07:24.218573Z  INFO src/main.rs:32: Socket connected!
+2024-10-06T20:07:28.628566Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"HI!\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:07:28.628601Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:07:47.859808Z  WARN src\state\mod.rs:44: Error receiving message from client: Io(Os { code: 10054, kind: ConnectionReset, message: "An existing connection was forcibly closed by the remote host." })
+2024-10-06T20:07:47.859852Z  INFO src\state\mod.rs:51: client 4 disconnected
+2024-10-06T20:07:58.550513Z  INFO src/main.rs:32: Socket connected!
+2024-10-06T20:08:01.044133Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"Cheetah!\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:08:01.044165Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:08:04.169794Z  WARN src\state\mod.rs:44: Error receiving message from client: Io(Os { code: 10054, kind: ConnectionReset, message: "An existing connection was forcibly closed by the remote host." })
+2024-10-06T20:08:04.169841Z  INFO src\state\mod.rs:51: client 5 disconnected
+2024-10-06T20:08:30.273989Z  INFO src/main.rs:32: Socket connected!
+2024-10-06T20:08:32.795989Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"hello\",\"usr\":\"Cheetah\"}",
+)
+2024-10-06T20:08:32.796029Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:10:17.201807Z  WARN src\state\mod.rs:44: Error receiving message from client: Io(Os { code: 10054, kind: ConnectionReset, message: "An existing connection was forcibly closed by the remote host." })
+2024-10-06T20:10:17.201915Z  INFO src\state\mod.rs:51: client 6 disconnected
+2024-10-06T20:10:27.474283Z  INFO src/main.rs:32: Socket connected!
+2024-10-06T20:10:29.411886Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"Hello\",\"usr\":\"Ch\"}",
+)
+2024-10-06T20:10:29.411927Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:10:33.927501Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"hi\",\"usr\":\"Ch\"}",
+)
+2024-10-06T20:10:33.927539Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:10:35.300116Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"hi\",\"usr\":\"Ch\"}",
+)
+2024-10-06T20:10:35.300149Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:15:54.276573Z  WARN src\state\mod.rs:44: Error receiving message from client: Io(Os { code: 10054, kind: ConnectionReset, message: "An existing connection was forcibly closed by the remote host." })
+2024-10-06T20:15:54.276613Z  INFO src\state\mod.rs:51: client 7 disconnected
+2024-10-06T20:16:03.797488Z  INFO src/main.rs:32: Socket connected!
+2024-10-06T20:16:07.370872Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"Hello!\",\"usr\":\"Ch\"}",
+)
+2024-10-06T20:16:07.370902Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:17:33.465794Z  WARN src\state\mod.rs:44: Error receiving message from client: Io(Os { code: 10054, kind: ConnectionReset, message: "An existing connection was forcibly closed by the remote host." })
+2024-10-06T20:17:33.465845Z  INFO src\state\mod.rs:51: client 8 disconnected
+2024-10-06T20:17:44.365118Z  INFO src/main.rs:32: Socket connected!
+2024-10-06T20:17:46.214271Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"Hello!\",\"usr\":\"Ch\"}",
+)
+2024-10-06T20:17:46.214310Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:18:27.318762Z  WARN src\state\mod.rs:44: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-06T20:18:27.318789Z  INFO src\state\mod.rs:51: client 9 disconnected
+2024-10-06T20:18:38.672439Z  INFO src/main.rs:32: Socket connected!
+2024-10-06T20:18:40.206037Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"Hello!\",\"usr\":\"CH\"}",
+)
+2024-10-06T20:18:40.206070Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:18:44.277985Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"I like this\",\"usr\":\"CH\"}",
+)
+2024-10-06T20:18:44.278025Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:18:54.396523Z  INFO src/main.rs:32: Socket connected!
+2024-10-06T20:18:55.690191Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"Hello\",\"usr\":\"iwfi4\"}",
+)
+2024-10-06T20:18:55.690232Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:19:01.162184Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"i am totally ifwi4\",\"usr\":\"iwfi4\"}",
+)
+2024-10-06T20:19:01.162273Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:20:13.437968Z  INFO src\state\mod.rs:55: Broadcasting message: Text(
+    "{\"msg\":\"hi\",\"usr\":\"CH\"}",
+)
+2024-10-06T20:20:13.438003Z  INFO src\state\mod.rs:63: Appended message with timestamp
+2024-10-06T20:21:49.005747Z  WARN src\state\mod.rs:44: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-06T20:21:49.005785Z  INFO src\state\mod.rs:51: client 10 disconnected
+2024-10-06T20:23:56.526269Z  WARN src\state\mod.rs:44: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-06T20:23:56.526302Z  INFO src\state\mod.rs:51: client 11 disconnected
