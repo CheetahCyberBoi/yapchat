@@ -14,7 +14,7 @@ lazy_static::lazy_static! {
 /// # Panics
 /// This function will panic if it cannot find the data folder environment variable.
 pub fn init() -> Result<()> {
-    let directory = globals::DATA_FOLDER.clone().expect("Data folder not found");
+    let directory = globals::DATA_FOLDER.clone().unwrap_or_else(|| "../logs/".into());
     std::fs::create_dir_all(directory.clone())?;
     let log_path = directory.join(LOG_FILE.clone());
     let log_file = std::fs::File::create(log_path)?;
