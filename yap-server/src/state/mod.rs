@@ -11,7 +11,7 @@ use std::collections::HashMap;
 use tokio::sync::RwLock;
 use tokio::sync::{broadcast, mpsc};
 use tokio_stream::wrappers::UnboundedReceiverStream;
-use tracing::{warn, info};
+use tracing::{info};
 use warp::ws::{Message, WebSocket};
 
 use self::client::Client;
@@ -25,6 +25,7 @@ static NEXT_CLIENT_ID: AtomicUsize = AtomicUsize::new(1);
 pub struct AppState {
     pub clients: Arc<RwLock<HashMap<usize, Client>>>,
     pub chat_rooms: Arc<RwLock<HashMap<usize, ChatRoom>>>,
+    #[allow(dead_code)]
     pub message_tx: broadcast::Sender<Message>,
 }
 
@@ -86,7 +87,7 @@ impl AppState {
         // Broadcast that a new user has joined
         let join_message = json!({
             "usr": "Server",
-            "msg": format!("{:#?} has joined the server", username),
+            "msg": format!("{:#} has joined the server", username),
             "timestamp": chrono::Utc::now()
         });
         self.broadcast_to_rooms(Message::text(join_message.to_string())).await;
@@ -114,7 +115,7 @@ impl AppState {
         self.close_client(new_client_id).await;
         let leave_message = json!({
             "usr": "Server",
-            "msg": format!("{:#?} has left the server", username),
+            "msg": format!("{:#} has left the server", username),
             "timestamp": chrono::Utc::now()
         });
         self.broadcast_to_rooms(Message::text(leave_message.to_string())).await;

@@ -1,0 +1,53 @@
+2024-10-08T23:53:16.653446Z  INFO src/main.rs:17: All set up!
+2024-10-08T23:53:16.654801Z  INFO Server::run{addr=0.0.0.0:80}: C:\Users\david\.cargo\registry\src\index.crates.io-6f17d22bba15001f\warp-0.3.7\src\server.rs:138: listening on http://0.0.0.0:80
+2024-10-08T23:53:45.498168Z  INFO src/main.rs:33: Socket connected!
+2024-10-08T23:53:45.498251Z  INFO src\state\mod.rs:53: Starting receiver task...
+2024-10-08T23:53:45.498438Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"\\\"\\\\\\\"Cheetah\\\\\\\"\\\" has joined the server\",\"timestamp\":\"2024-10-08T23:53:45.498425700Z\",\"usr\":\"Server\"}",
+)
+2024-10-08T23:53:45.498937Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:53:45.498952Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:53:45.498960Z  INFO src\state\chat_room.rs:26: Client 1 subscribed to chat room "main"
+2024-10-08T23:53:52.325574Z  INFO src/main.rs:33: Socket connected!
+2024-10-08T23:53:52.325598Z  INFO src\state\mod.rs:53: Starting receiver task...
+2024-10-08T23:53:52.325784Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"\\\"\\\\\\\"Cheeter\\\\\\\"\\\" has joined the server\",\"timestamp\":\"2024-10-08T23:53:52.325780200Z\",\"usr\":\"Server\"}",
+)
+2024-10-08T23:53:52.325799Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:53:52.325807Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:53:52.325811Z  INFO src\state\chat_room.rs:26: Client 2 subscribed to chat room "main"
+2024-10-08T23:53:52.325819Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:53:52.325823Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:53:57.188382Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"你好\",\"usr\":\"Cheeter\"}",
+)
+2024-10-08T23:53:57.188438Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:53:57.188453Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:53:57.188464Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:53:57.188465Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:53:57.188481Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:53:57.188469Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:56:01.419668Z  WARN src\state\mod.rs:107: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-08T23:56:01.419721Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"\\\"\\\\\\\"Cheeter\\\\\\\"\\\" has left the server\",\"timestamp\":\"2024-10-08T23:56:01.419714200Z\",\"usr\":\"Server\"}",
+)
+2024-10-08T23:56:01.419738Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:56:01.419750Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:56:01.419757Z  INFO src\state\mod.rs:121: client 2 disconnected
+2024-10-08T23:56:01.419761Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:56:01.419777Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:56:01.419764Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:56:01.419797Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:56:01.419809Z ERROR src\state\mod.rs:61: Failed to send message back through WebSocket.
+2024-10-08T23:56:05.208255Z  WARN src\state\mod.rs:107: Error receiving message from client: Protocol(ResetWithoutClosingHandshake)
+2024-10-08T23:56:05.208309Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"\\\"\\\\\\\"Cheetah\\\\\\\"\\\" has left the server\",\"timestamp\":\"2024-10-08T23:56:05.208302300Z\",\"usr\":\"Server\"}",
+)
+2024-10-08T23:56:05.208325Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:56:05.208336Z  WARN src\state\chat_room.rs:54: Failed to send message to client 2, marking for removal
+2024-10-08T23:56:05.208407Z  INFO src\state\chat_room.rs:64: Removed client 2 due to disconnection
+2024-10-08T23:56:05.208417Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:56:05.208422Z  INFO src\state\mod.rs:121: client 1 disconnected
+2024-10-08T23:56:05.208431Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:56:05.208436Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:56:05.208443Z ERROR src\state\mod.rs:61: Failed to send message back through WebSocket.

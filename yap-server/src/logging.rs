@@ -1,6 +1,5 @@
 use color_eyre::Result;
-use tracing_error::ErrorLayer;
-use tracing_subscriber::{fmt, prelude::*, EnvFilter};
+use tracing_subscriber::{EnvFilter};
 
 use crate::state::globals;
 // Some logging globals.
@@ -16,12 +15,13 @@ lazy_static::lazy_static! {
 pub fn init() -> Result<()> {
     let directory = globals::DATA_FOLDER.clone().unwrap_or_else(|| "../logs/".into());
     std::fs::create_dir_all(directory.clone())?;
-    let log_path = directory.join(LOG_FILE.clone());
-    let log_file = std::fs::File::create(log_path)?;
-    let env_filter = EnvFilter::builder().with_default_directive(tracing::Level::INFO.into());
+
     // When we're compiling for release we want proper logging
     #[cfg(not(debug_assertions))]
     {
+        let log_path = directory.join(LOG_FILE.clone());
+        let log_file = std::fs::File::create(log_path)?;
+        let env_filter = EnvFilter::builder().with_default_directive(tracing::Level::INFO.into());
         // If the `RUST_LOG` envar is set, then use that, otherwise
         // use the value of `LOG_ENV`. If that contains errors, this will error.
         let env_filter = env_filter

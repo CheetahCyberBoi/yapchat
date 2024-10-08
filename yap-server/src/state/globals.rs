@@ -30,11 +30,11 @@ mod tests {
 
     #[test]
     fn data_dir_get() {
-        let data_dir = DATA_FOLDER.clone().expect("Data folder not found");
+        let _data_dir = DATA_FOLDER.clone().expect("Data folder not found");
     }
 
     #[test]
     fn config_dir_get() {
-        let config_dir = CONFIG_FOLDER.clone().expect("Config folder not found");
+        let _config_dir = CONFIG_FOLDER.clone().expect("Config folder not found");
     }
 }
