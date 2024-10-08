@@ -1,4 +1,6 @@
 pub mod globals;
+pub mod chat_room;
+pub mod client;
 
 use futures::StreamExt;
 use serde_json::json;
@@ -6,11 +8,13 @@ use std::sync::Arc;
 use std::sync::atomic::{AtomicUsize, Ordering};
 use std::collections::HashMap;
 use tokio::sync::RwLock;
-use tokio::sync::{broadcast, mpsc, mpsc::UnboundedSender};
+use tokio::sync::{broadcast, mpsc};
 use tokio_stream::wrappers::UnboundedReceiverStream;
 use tracing::{warn, info};
 use warp::ws::{Message, WebSocket};
-use warp::Error;
+
+use self::client::Client;
+use self::chat_room::ChatRoom;
 
 // Used to add onto the client ID.
 static NEXT_CLIENT_ID: AtomicUsize = AtomicUsize::new(1);
@@ -19,16 +23,20 @@ static NEXT_CLIENT_ID: AtomicUsize = AtomicUsize::new(1);
 #[derive(Clone, Debug)]
 pub struct AppState {
     pub clients: Arc<RwLock<HashMap<usize, Client>>>,
+    pub chat_rooms: Arc<RwLock<HashMap<usize, ChatRoom>>>,
     pub message_tx: broadcast::Sender<Message>,
 }
 
 impl AppState {
     /// Instantiates a new server, with fresh transmitters and client hashmaps.
-    pub fn new() -> Self {
+    pub async fn new() -> Self {
         // FIXME: This should be an unlimited channel at some point, or at least be at like maximum usize or something.
         let (message_tx, _message_rx) = broadcast::channel(100);
+        let chat_rooms = Arc::new(RwLock::new(HashMap::new()));
+        chat_rooms.write().await.insert(0, ChatRoom::new("main".to_string()));
         Self {
             clients: Arc::new(RwLock::new(HashMap::new())),
+            chat_rooms: chat_rooms,
             message_tx: message_tx,
         }
     }
@@ -60,12 +68,12 @@ impl AppState {
         // Broadcast that a new user has joined
         let join_message = json!({
             "usr": "Server",
-            "msg": format!("{} has joined the chat", username),
+            "msg": format!("{} has joined the server", username),
             "timestamp": chrono::Utc::now()
         });
-        self.broadcast_to_clients(Message::text(join_message.to_string())).await;
+        self.broadcast_to_rooms(Message::text(join_message.to_string())).await;
         // Add the new client
-        self.clients.write().await.insert(new_client_id, Client::new(tx));
+        self.clients.write().await.insert(new_client_id, Client::new(tx, self.chat_rooms.read().await.get(&0).expect("Default room not created!").clone()));
         // Sit and wait for the client to send messages.
         while let Some(r) = ws_rx.next().await {
             let msg = match r {
@@ -75,69 +83,64 @@ impl AppState {
                     break;
                 },
             };
-            self.broadcast_to_clients(msg).await;
+            self.broadcast_to_rooms(msg).await;
         }
         // Client no longer sending messages, we can disconnect them.
         //Broadcast that the client has left
         self.close_client(new_client_id).await;
         let leave_message = json!({
             "usr": "Server",
-            "msg": format!("{} has left the chat", username),
+            "msg": format!("{} has left the server", username),
             "timestamp": chrono::Utc::now()
         });
-        self.broadcast_to_clients(Message::text(leave_message.to_string())).await;
+        self.broadcast_to_rooms(Message::text(leave_message.to_string())).await;
         info!("client {} disconnected", new_client_id);
     }
-    /// Broadcasts a message to all connected clients.
-    pub async fn broadcast_to_clients(&self, msg: Message) {
-        info!("Broadcasting message: {:#?}", &msg);
-        // Parse the message to a string for ease of sending.
-        let msg = if let Ok(msg) = msg.to_str() {
-            msg
-        } else {
-            return;
-        };
-        // Tack on the timestamp to the message.
-        let mut msg: serde_json::Value = serde_json::from_str(msg).expect("failed to parse message from client");
-        msg["timestamp"] = serde_json::json!(chrono::Utc::now());
-        info!("Appended message with timestamp");
+    /// Broadcasts a message to all the chat rooms.
+    pub async fn broadcast_to_rooms(&self, msg: Message) {
+        // Read lock to access rooms.
+        let rooms = self.chat_rooms.read().await;
 
-        //Collect disconnected clients to remove later
-        let mut disconnected_clients = Vec::new();
+        for (room_id, room) in rooms.iter() {
+            // Clone the message each time
+            let msg_clone = msg.clone();
+            
 
-        //Broadcast to all clients
-        for (&id, client) in self.clients.read().await.iter() {
-            if let Err(_e) = client.sender.send(Ok(Message::text(msg.to_string()))) {
-                // Log the error and mark the client for removal
-                warn!("Failed to send message to client {}, marking for removal", id);
-                disconnected_clients.push(id);
-            }
-        }
-
-        //Clean up the disconnected clients
-        if !disconnected_clients.is_empty() {
-            let mut clients = self.clients.write().await;
-            for id in disconnected_clients {
-                clients.remove(&id);
-                info!("Removed client {} due to disconnection", id);
-            }
+            //Broadcast to the room.
+            room.broadcast_to_clients(msg_clone).await;
+            info!("Room id {:#?} is broadcasting a message", room_id);
         }
     }
     /// Disconnects a client entirely.
     pub async fn close_client(&self, id: usize) {
         self.clients.write().await.remove(&id);
     }
-}
-
-/// A representation of a client. Currently just a sender, might change to a type alias eventually.
-#[derive(Clone, Debug)]
-pub struct Client {
-    pub sender: UnboundedSender<Result<Message, Error>>,
-}
-
-impl Client {
-    /// Creates a new client given its `sender`.
-    pub fn new(sender: UnboundedSender<Result<Message, Error>>) -> Self {
-        Self { sender }
+    /// Moves a client to a room, creating said room if it  does not exist yet
+    pub async fn move_client_to_room(&self, client_id: usize, room_id: usize, room_name: String) {
+        // Set up chatroom
+        let next_room_id = NEXT_CLIENT_ID.fetch_add(1, Ordering::Relaxed);
+        let maybe_room = self.get_room(room_id).await;
+        let mut chat_room = match maybe_room {
+            Some(room) => room,
+            None => {
+                let room = ChatRoom::new(room_name);
+                room.clients.write().await.insert(0, self.clients.read().await.get(&client_id).unwrap().clone());
+                self.chat_rooms.write().await.insert(next_room_id, room);
+                self.get_room(room_id).await.unwrap()
+            }
+        };
+        
+        let mut old_room = self.get_client(client_id).await.room;
+        old_room.unsubscribe_client(client_id).await;
+        chat_room.subscribe_client(self.clients.read().await.get(&client_id).unwrap().clone(), client_id).await;
+        info!("Client {:#?} moved from room {:#?} to room {:#?}", &client_id, old_room.name, chat_room.name);
+    }
+    /// Utility function: gets a client from it's id
+    pub async fn get_client(&self, client_id: usize) -> Client {
+        self.clients.read().await.get(&client_id).unwrap().clone()
+    }
+    /// Utility function: gets a room from it's id
+    pub async fn get_room(&self, room_id: usize) -> Option<ChatRoom> {
+        self.chat_rooms.read().await.get(&room_id).cloned()
     }
 }
