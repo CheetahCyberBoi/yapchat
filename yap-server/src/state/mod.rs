@@ -86,7 +86,7 @@ impl AppState {
         // Broadcast that a new user has joined
         let join_message = json!({
             "usr": "Server",
-            "msg": format!("{} has joined the server", username),
+            "msg": format!("{:#?} has joined the server", username),
             "timestamp": chrono::Utc::now()
         });
         self.broadcast_to_rooms(Message::text(join_message.to_string())).await;
@@ -114,7 +114,7 @@ impl AppState {
         self.close_client(new_client_id).await;
         let leave_message = json!({
             "usr": "Server",
-            "msg": format!("{} has left the server", username),
+            "msg": format!("{:#?} has left the server", username),
             "timestamp": chrono::Utc::now()
         });
         self.broadcast_to_rooms(Message::text(leave_message.to_string())).await;

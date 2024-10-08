@@ -72,7 +72,7 @@ async fn main() {
                         let local_date_time = date_time.with_timezone(&Local);
 
                         // Convert to H:M format
-                        let formatted_time = local_date_time.format("%H:%M").to_string();
+                        let formatted_time = local_date_time.format("%A %h %dth, %H:%M").to_string();
 
                         // Parse the message contents as proper strings.
                         let user = message_from_server["usr"].as_str().unwrap_or("[Unknown User]");
