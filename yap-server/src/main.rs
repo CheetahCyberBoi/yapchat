@@ -8,12 +8,6 @@ use tokio::sync::RwLock;
 use warp::Filter;
 use warp::ws::{WebSocket};
 
-use crate::state::AppState;
-
-// Passes the websocket off to the appstate to handle.
-async fn handle_websocket(ws: WebSocket, app_state: Arc<AppState>) {
-    app_state.handle_new_client(ws).await;
-}
 
 #[tokio::main]
 async fn main() -> color_eyre::Result<()> {
@@ -23,45 +17,23 @@ async fn main() -> color_eyre::Result<()> {
     tracing::info!("All set up!");
 
     // Wrap AppState in an Arc so that it can be shared across requests
-    let app_state = Arc::new(state::AppState::new().await);
+    let app_state = Arc::new(state::AppState::new());
 
     // Clone the Arc<AppState> for use in each request
     let clients = warp::any().map({
-        move || app_state.clone()
+        let app_state = app_state.clone();
+        move || app_state.clone()  // Clone the Arc on each request
     });
-
-
-    //Add code here.
+    // Start Warp.
     let route = warp::path::end()
         .and(warp::ws())
         .and(clients)
-        .map(|ws: warp::ws::Ws, app_state: Arc<AppState>| {
-            ws.on_upgrade(move |socket| handle_websocket(socket, app_state))
+        .map(|socket: warp::ws::Ws, app_state: Arc<state::AppState>| {
+            let app_state_clone = app_state.clone();
+            socket.on_upgrade(move |ws| { tracing::info!("Socket connected!"); app_state.handle_new_client(ws)})
         });
-
-
-
 
     warp::serve(route).run(([0, 0, 0, 0], 80)).await;
 
     Ok(())
 }
-
-
-    // Start Warp.
-    // let route = warp::path::end()
-    //     .and(warp::ws())
-    //     .and(clients)
-    //     .and_then(|ws: warp::ws::Ws, app_state: Arc<AppState>| async move {
-    //         // Clone the appstate to move it into the async block
-    //         let app_state_clone = app_state.clone();
-
-    //         ws.on_upgrade(move |socket| { 
-    //             tracing::info!("Socket connected!"); 
-    //             app_state_clone.handle_new_client(socket)
-    //         });
-
-    //         Ok::<_, warp::Rejection>(())
-    //     });
-
-

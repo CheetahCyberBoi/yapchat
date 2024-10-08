@@ -8,13 +8,11 @@ use super::chat_room::ChatRoom;
 #[derive(Clone, Debug)]
 pub struct Client {
     pub sender: UnboundedSender<Result<Message, Error>>,
-    pub room: ChatRoom,
-
 }
 
 impl Client {
     /// Creates a new client given its `sender`.
-    pub fn new(sender: UnboundedSender<Result<Message, Error>>, chat_room: ChatRoom) -> Self {
-        Self { sender, room: chat_room }
+    pub fn new(sender: UnboundedSender<Result<Message, Error>>) -> Self {
+        Self { sender }
     }
 }
