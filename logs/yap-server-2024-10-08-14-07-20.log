@@ -1,0 +1,99 @@
+2024-10-08T14:07:20.551371Z  INFO src/main.rs:17: All set up!
+2024-10-08T14:07:20.552722Z  INFO Server::run{addr=0.0.0.0:80}: C:\Users\david\.cargo\registry\src\index.crates.io-6f17d22bba15001f\warp-0.3.7\src\server.rs:138: listening on http://0.0.0.0:80
+2024-10-08T23:49:33.720384Z  INFO src/main.rs:33: Socket connected!
+2024-10-08T23:49:33.720494Z  INFO src\state\mod.rs:53: Starting receiver task...
+2024-10-08T23:49:33.720741Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"\\\"Cheetah\\\" has joined the server\",\"timestamp\":\"2024-10-08T23:49:33.720722900Z\",\"usr\":\"Server\"}",
+)
+2024-10-08T23:49:33.723314Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:49:33.723331Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:49:33.723346Z  INFO src\state\chat_room.rs:26: Client 1 subscribed to chat room "main"
+2024-10-08T23:49:35.032740Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"hello\",\"usr\":\"Cheetah\"}",
+)
+2024-10-08T23:49:35.032785Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:49:35.032796Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:49:35.032807Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:49:35.032811Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:49:41.315149Z  INFO src/main.rs:33: Socket connected!
+2024-10-08T23:49:41.315181Z  INFO src\state\mod.rs:53: Starting receiver task...
+2024-10-08T23:49:41.315380Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"\\\"amog\\\" has joined the server\",\"timestamp\":\"2024-10-08T23:49:41.315374900Z\",\"usr\":\"Server\"}",
+)
+2024-10-08T23:49:41.315400Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:49:41.315410Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:49:41.315418Z  INFO src\state\chat_room.rs:26: Client 2 subscribed to chat room "main"
+2024-10-08T23:49:41.315428Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:49:41.315434Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:49:42.380849Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"hi\",\"usr\":\"amog\"}",
+)
+2024-10-08T23:49:42.380885Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:49:42.380904Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:49:42.380915Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:49:42.380920Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:49:42.380946Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:49:42.380960Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:50:08.636776Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"this is pretty cool\",\"usr\":\"Cheetah\"}",
+)
+2024-10-08T23:50:08.636817Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:50:08.636837Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:50:08.636853Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:50:08.636860Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:50:08.636863Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:50:08.636878Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:50:10.639182Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"amogus\",\"usr\":\"Cheetah\"}",
+)
+2024-10-08T23:50:10.639220Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:50:10.639239Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:50:10.639254Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:50:10.639261Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:50:10.639253Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:50:10.639344Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:50:13.713130Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"the delay is real\",\"usr\":\"Cheetah\"}",
+)
+2024-10-08T23:50:13.713166Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:50:13.713183Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:50:13.713194Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:50:13.713204Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:50:13.713197Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:50:13.713217Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:50:15.658404Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"omg\",\"usr\":\"Cheetah\"}",
+)
+2024-10-08T23:50:15.658452Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:50:15.658473Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:50:15.658487Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:50:15.658493Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:50:15.658484Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:50:15.658525Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:50:17.961754Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"asdf\",\"usr\":\"Cheetah\"}",
+)
+2024-10-08T23:50:17.961793Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:50:17.961811Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:50:17.961821Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:50:17.961825Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:50:17.961838Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:50:17.961831Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:50:19.384183Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"slkdfjlskdjf\",\"usr\":\"Cheetah\"}",
+)
+2024-10-08T23:50:19.384219Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:50:19.384237Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:50:19.384250Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:50:19.384250Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:50:19.384258Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:50:19.384270Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:50:21.833101Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
+    "{\"msg\":\"wowwie\",\"usr\":\"amog\"}",
+)
+2024-10-08T23:50:21.833143Z  INFO src\state\chat_room.rs:40: Appended message with timestamp
+2024-10-08T23:50:21.833161Z  INFO src\state\mod.rs:135: Room id 0 is broadcasting a message
+2024-10-08T23:50:21.833171Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:50:21.833176Z  INFO src\state\mod.rs:56: Got a message!
+2024-10-08T23:50:21.833187Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
+2024-10-08T23:50:21.833198Z  INFO src\state\mod.rs:59: Sending message down WebSocket....
