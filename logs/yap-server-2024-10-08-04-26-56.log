@@ -1,17 +1,2 @@
 2024-10-08T04:26:56.698305Z  INFO src/main.rs:23: All set up!
 2024-10-08T04:26:56.699666Z  INFO Server::run{addr=0.0.0.0:80}: C:\Users\david\.cargo\registry\src\index.crates.io-6f17d22bba15001f\warp-0.3.7\src\server.rs:138: listening on http://0.0.0.0:80
-2024-10-08T04:27:11.947719Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
-    "{\"msg\":\"\\\"h\\\" has joined the server\",\"timestamp\":\"2024-10-08T04:27:11.947708700Z\",\"usr\":\"Server\"}",
-)
-2024-10-08T04:27:11.947765Z  INFO src\state\chat_room.rs:44: Appended message with timestamp
-2024-10-08T04:27:11.949822Z  INFO src\state\mod.rs:111: Room id 0 is broadcasting a message
-2024-10-08T04:27:13.701053Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
-    "{\"msg\":\"hi\",\"usr\":\"h\"}",
-)
-2024-10-08T04:27:13.701088Z  INFO src\state\chat_room.rs:44: Appended message with timestamp
-2024-10-08T04:27:13.701095Z  INFO src\state\mod.rs:111: Room id 0 is broadcasting a message
-2024-10-08T04:27:19.780964Z  INFO src\state\chat_room.rs:34: Chat room "main" broadcasting message: Text(
-    "{\"msg\":\"ono\",\"usr\":\"h\"}",
-)
-2024-10-08T04:27:19.780993Z  INFO src\state\chat_room.rs:44: Appended message with timestamp
-2024-10-08T04:27:19.780999Z  INFO src\state\mod.rs:111: Room id 0 is broadcasting a message
